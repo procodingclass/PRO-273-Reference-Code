@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Gautam Ahuja",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 2.1, "left": 18.9, "attrs": {} },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": 57.15, "left": -105.02, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -92.24,
+      "left": 376.94,
+      "attrs": { "color": "blue" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 0.07,
+      "left": 385.67,
+      "attrs": { "color": "green" }
+    },
+    { "type": "wokwi-slide-switch", "id": "sw1", "top": 129.81, "left": 395.65, "attrs": {} }
+  ],
+  "connections": [
+    [ "sd1:GND", "uno:GND.1", "black", [ "h43.39", "v-91.45", "h118.97" ] ],
+    [ "sd1:SCK", "uno:13", "orange", [ "h37.1", "v-108.16", "h130.17" ] ],
+    [ "sd1:CS", "uno:10", "blue", [ "h15.4", "v-163.49", "h174.25" ] ],
+    [ "sd1:DI", "uno:11", "cyan", [ "h21.01", "v-144.21", "h160.41" ] ],
+    [ "sd1:DO", "uno:12", "green", [ "h29.24", "v-95.33", "h142.93" ] ],
+    [ "sd1:VCC", "uno:5V", "red", [ "h46.72", "v110.35", "h161.44" ] ],
+    [ "btn1:1.l", "uno:2", "blue", [ "h0" ] ],
+    [ "btn2:2.r", "uno:GND.2", "black", [ "h24.8", "v241.68", "h-283.18" ] ],
+    [ "btn1:2.r", "uno:GND.2", "black", [ "h54.74", "v371.42", "h-314.36" ] ],
+    [ "btn2:1.l", "uno:3", "green", [ "h-41.94", "v-58.15", "h-94.81" ] ],
+    [ "sw1:1", "uno:4", "violet", [ "v52.82", "h-75.13", "v-235.77", "h-89.82" ] ],
+    [ "sw1:3", "uno:5", "limegreen", [ "v70.28", "h-122.82", "v-244.5", "h-68.61" ] ],
+    [ "sw1:2", "uno:GND.2", "black", [ "v102.72", "h-221.85", "v1.25" ] ]
+  ]
+}
