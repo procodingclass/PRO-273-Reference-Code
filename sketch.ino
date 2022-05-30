@@ -62,6 +62,8 @@ void loop() {
 
   book_num = constrain(book_num, 0, 1);
   check_book();
+  
+  read_book();
 
   //  for better working of simulator
   delay(10);
@@ -77,4 +79,24 @@ void check_book() {
       Serial.println("Harry Potter");
     }
   }
+}
+
+void read_book(){
+ if(book_state){
+   if(book_num){
+     file= SD.open("think.txt",FILE_READ);
+   }
+   else{
+     file= SD.open("harry.txt",FILE_READ);
+   }
+
+   String display_text="";
+   if(file){
+     while(file.available()){
+       char data=file.read();
+       Serial.print(data);
+     }
+   }
+ } 
+ file.close();
 }
